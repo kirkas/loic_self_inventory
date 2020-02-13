@@ -1,0 +1,261 @@
+@import "selectize.css";
+@import "reset.css";
+
+@font-face {
+    font-family: 'Neue Haas Unica';
+    src: url('fonts/NeueHaasUnica/NeueHaasUnica-Medium.eot');
+    src: url('fonts/NeueHaasUnica/NeueHaasUnica-Medium.eot?#iefix') format('embedded-opentype'),
+        url('fonts/NeueHaasUnica/NeueHaasUnica-Medium.woff2') format('woff2'),
+        url('fonts/NeueHaasUnica/NeueHaasUnica-Medium.woff') format('woff'),
+        url('fonts/NeueHaasUnica/NeueHaasUnica-Medium.ttf') format('truetype'),
+        url('fonts/NeueHaasUnica/NeueHaasUnica-Medium.svg#NeueHaasUnica-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Neue Haas Unica';
+    src: url('fonts/NeueHaasUnica/NeueHaasUnica-Regular.eot');
+    src: url('fonts/NeueHaasUnica/NeueHaasUnica-Regular.eot?#iefix') format('embedded-opentype'),
+        url('fonts/NeueHaasUnica/NeueHaasUnica-Regular.woff2') format('woff2'),
+        url('fonts/NeueHaasUnica/NeueHaasUnica-Regular.woff') format('woff'),
+        url('fonts/NeueHaasUnica/NeueHaasUnica-Regular.ttf') format('truetype'),
+        url('fonts/NeueHaasUnica/NeueHaasUnica-Regular.svg#NeueHaasUnica-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'William Text Pro';
+    src: url('fonts/WilliamTextPro/WilliamTextPro-Regular.eot');
+    src: url('fonts/WilliamTextPro/WilliamTextPro-Regular.eot?#iefix') format('embedded-opentype'),
+        url('fonts/WilliamTextPro/WilliamTextPro-Regular.woff2') format('woff2'),
+        url('fonts/WilliamTextPro/WilliamTextPro-Regular.woff') format('woff'),
+        url('fonts/WilliamTextPro/WilliamTextPro-Regular.ttf') format('truetype'),
+        url('fonts/WilliamTextPro/WilliamTextPro-Regular.svg#WilliamTextPro-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'William Text Pro';
+    src: url('fonts/WilliamTextPro/WilliamTextPro-Italic.eot');
+    src: url('fonts/WilliamTextPro/WilliamTextPro-Italic.eot?#iefix') format('embedded-opentype'),
+        url('fonts/WilliamTextPro/WilliamTextPro-Italic.woff2') format('woff2'),
+        url('fonts/WilliamTextPro/WilliamTextPro-Italic.woff') format('woff'),
+        url('fonts/WilliamTextPro/WilliamTextPro-Italic.ttf') format('truetype'),
+        url('fonts/WilliamTextPro/WilliamTextPro-Italic.svg#WilliamTextPro-Italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: monospace;
+}
+
+body {
+  margin: 20px;
+  font-family: 'Neue Haas Unica';
+  background: #CDCDCD;
+  line-height: 1.6;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.u-displayNone {
+  display: none;
+}
+
+.c-william-text-pro {
+  font-family: 'William Text Pro';
+}
+
+.c-tag {
+  font-family: 'William Text Pro';
+  text-decoration: underline;
+}
+
+.c-input-group {
+  margin-bottom: 16px;
+}
+
+.c-input, .selectize-input {
+  border: 1px solid #AAA;
+  font-family: monospace;
+  font-size: 16px;
+  width: 100%;
+  padding: 8px 8px;
+  border-radius: 4px;
+}
+
+.c-input.selectize-control{
+  border: none;
+  padding: 0;
+}
+
+.c-input-group .c-label {
+  margin-bottom: 8px;
+  width: 100%;
+  display: inline-block;
+}
+
+.c-button {
+  border: 1px solid darkblue;
+  background: blue;
+  color: white;
+  font-family: monospace;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.Header {
+  display: flex;
+  align-items: center;
+  margin-top: 38px;
+  margin-bottom: 32px
+}
+
+.Header--title {
+  font-family: 'William Text Pro';
+  flex: 1;
+  font-size: 42px;
+}
+
+
+.Header--title--link {
+  text-decoration: none;
+  color: black;
+}
+
+.Header--title--link:hover {
+  color: #333;
+}
+
+.Header--subtitle {
+  font-size: 22px;
+}
+
+/* Main view */
+.inventoryItemsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.inventoryItemsContainer .InventoryItemCard {
+  flex-grow: 1;
+  width: 33%;
+  padding: 32px;
+}
+
+.InventoryItemLarge--content {
+  display: flex;
+  margin-top: 32px;
+}
+
+.InventoryItemLarge--title {
+  text-indent: -40px;
+  padding-left: 40px;
+  font-size: 32px;
+  line-height: 38px;
+  font-weight: 400;
+}
+
+
+
+.InventoryItemLarge--metadata {
+  text-indent: -40px;
+  padding-left: 40px;
+  font-size: 32px;
+  line-height: 38px;
+  font-weight: 400;
+}
+
+.InventoryItemLarge--metadata a {
+  color: black;
+}
+
+.InventoryItemLarge--titleWrapper {
+  flex: 1;
+}
+
+.InventoryItemLarge--textWrapper {
+  flex: 1;
+}
+
+.InventoryItemLarge--description {
+  font-family: 'William Text Pro';
+}
+
+.InventoryItemLarge--tagsWrapper {
+  margin-top: 32px;
+}
+
+
+.InventoryItemLarge--image {
+  width: 100%;
+}
+
+.InventoryItemCard--image {
+  max-width: 100%
+}
+
+.InventoryItemCard--title {
+  text-align: center;
+}
+
+
+/* Admin view */
+.InventoryItemTable {
+  width: 100%;
+}
+
+.InventoryItemTableRow {
+  border-bottom: 10px solid #cdcdcd;
+}
+
+.InventoryItemTableRow .InventoryItemTableRow--image {
+  max-width: 60px;
+  max-height: 60px;
+}
+
+.Form--image {
+  max-width: 100%;
+  max-height: 100px;
+}
+
+
+hr {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  border: none;
+  border-bottom: 1px solid #eee;
+}
+
+
+.success-message {
+  background: green;
+  padding: 12px;
+  color: white;
+  margin-bottom: 12px;
+}
