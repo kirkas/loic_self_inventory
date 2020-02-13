@@ -21,28 +21,37 @@ export default class InventoryItemLarge extends Component {
   }
 
   renderEditor(inventoryItem) {
-    if(inventoryItem.editor != undefined && inventoryItem.editor_url != undefined) {
+    if(this.props.InventoryItem.editor != undefined && this.props.InventoryItem.editor_url != undefined) {
       return (
-        <span className="InventoryItem--editor"><a href={inventoryItem.editor_url}>{inventoryItem.editor}</a></span>
+        <span className="InventoryItem--editor"><a href={this.props.InventoryItem.editor_url}>{this.props.InventoryItem.editor}</a></span>
       )
-    } else if (inventoryItem.editor != undefined) {
+    } else if (this.props.InventoryItem.editor != undefined) {
       return(
-        <span className="InventoryItem--editor">{inventoryItem.editor}</span>
+        <span className="InventoryItem--editor">{this.props.InventoryItem.editor}</span>
       )
 
-    } else if (inventoryItem.editor_url != undefined) {
+    } else if (this.props.InventoryItem.editor_url != undefined) {
       return (
-        <span className="InventoryItem--editor"><a href={inventoryItem.editor_url}>{inventoryItem.editor_url}</a></span>
+        <span className="InventoryItem--editor"><a href={this.props.InventoryItem.editor_url}>{this.props.InventoryItem.editor_url}</a></span>
       )
     }
   }
 
 
   render() {
-    let metadata = [this.props.InventoryItem.category, this.props.InventoryItem.size, this.props.InventoryItem.year];
+    console.log(this.renderEditor())
+    window.lol = this.renderEditor()
+    let metadata = [
+      this.props.InventoryItem.author,
+      this.props.InventoryItem.category,
+      this.props.InventoryItem.size,
+      this.props.InventoryItem.year
+    ];
+
     let metadataText = metadata.filter(function (el) {
       return el != null;
     }).join(", ");
+
     console.log(metadataText)
     return (
       <div className="InventoryItemLarge">
@@ -52,11 +61,16 @@ export default class InventoryItemLarge extends Component {
             <h3 className="InventoryItemLarge--title">{this.props.InventoryItem.title}</h3>
             <h4 className="InventoryItemLarge--metadata">
               {metadataText ? metadataText : ''}
+              {metadataText && this.renderEditor() ? ', ' : ''}
+              {this.renderEditor() ? this.renderEditor() : ''}
             </h4>
           </div>
           <div className="InventoryItemLarge--textWrapper">
             <p className="InventoryItemLarge--description">{this.props.InventoryItem.description}</p>
-            <div className="InventoryItemLarge--tagsWrapper">{this.renderTags(this.props.InventoryItem)}</div>
+            <div className="InventoryItemLarge--tagsWrapper">
+              Keywords: 
+              {this.renderTags(this.props.InventoryItem)}
+            </div>
           </div>
         </div>
       </div>

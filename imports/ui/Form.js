@@ -27,6 +27,7 @@ export default class Form extends Component {
     const year = ReactDOM.findDOMNode(this.refs.year).value.trim();
     const category = ReactDOM.findDOMNode(this.refs.category).value.trim();
     const size = ReactDOM.findDOMNode(this.refs.size).value.trim();
+    const author = ReactDOM.findDOMNode(this.refs.author).value.trim();
 
     const favorite  = ReactDOM.findDOMNode(this.refs.favorite).checked;
     const tags_titles = this.selectize.getValue();
@@ -62,6 +63,7 @@ export default class Form extends Component {
       updatedAt: new Date(),
       year: year,
       category: category,
+      author: author,
       size: size
     }
     if(imageInsert) {
@@ -153,7 +155,7 @@ export default class Form extends Component {
     let yearValue = this.props.InventoryItem ? this.props.InventoryItem.year : ''
     let categoryValue = this.props.InventoryItem ? this.props.InventoryItem.category : ''
     let sizeValue = this.props.InventoryItem ? this.props.InventoryItem.size : ''
-
+    let authorValue  = this.props.InventoryItem ? this.props.InventoryItem.author : ''
     let tagsValue = ['']
     if (this.props.InventoryItem != undefined) {
        tagsValue = this.props.InventoryItem.taggings().map((tagging) => (
@@ -179,13 +181,21 @@ export default class Form extends Component {
             defaultValue={titleValue}/>
         </div>
         <div className="c-input-group">
+          <label className="c-label">Author/artist</label>
+          <input
+            className="c-input"
+            type="text"
+            ref="author"
+            placeholder="Author/artist"
+            defaultValue={authorValue}/>
+        </div>
+        <div className="c-input-group">
           <label className="c-label">Description</label>
           <input
             className="c-input"
             type="text"
             ref="description"
             placeholder="Description"
-            required="required"
             defaultValue={descriptionValue}/>
         </div>
         <div className="c-input-group">
@@ -252,7 +262,6 @@ export default class Form extends Component {
             type="text"
             ref="tags"
             placeholder="Tags"
-            required="required"
             defaultValue={tagsValue}>
             {this.renderOptions()}
           </select>

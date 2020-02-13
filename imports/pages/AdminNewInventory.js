@@ -8,7 +8,6 @@ import { Taggings } from '../api/taggings.js';
 
 // UI
 import Form from '../ui/Form.js';
-import Header from '../ui/Header.js';
 import InventoryItemTable from '../ui/InventoryItemTable.js';
 import AccountsUIWrapper from '../ui/AccountsUIWrapper.js';
 
@@ -17,7 +16,6 @@ class AdminNewInventory extends Component {
   render() {
     return (
       <div className="container">
-        <Header />
         <hr/>
         <h1>Admin / New inventory</h1>
         <hr/>

@@ -8,8 +8,6 @@ import { InventoryItems } from '../api/inventory_items.js';
 
 // UI
 import InventoryItemCard from '../ui/InventoryItemCard.js';
-import Header from '../ui/Header.js';
-
 
 // App component - represents the whole app
 class Index extends Component {
@@ -24,7 +22,6 @@ class Index extends Component {
   render() {
     return (
       <div className="container">
-        <Header />
         <div>
           <ul className="inventoryItemsContainer">
             {this.renderInventoryItems()}

@@ -8,7 +8,6 @@ import { Taggings } from '../api/taggings.js';
 
 // UI
 import InventoryItemLarge from '../ui/InventoryItemLarge.js';
-import Header from '../ui/Header.js';
 import Tagging from '../ui/Tagging.js';
 
 // App component - represents the whole app
@@ -16,7 +15,6 @@ class ShowNowMatch extends Component {
   render() {
     return (
       <div className="container">
-        <Header />
         <div>Welcome to the void</div>
       </div>
     )

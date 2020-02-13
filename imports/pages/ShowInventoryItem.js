@@ -8,7 +8,6 @@ import { Taggings } from '../api/taggings.js';
 
 // UI
 import InventoryItemLarge from '../ui/InventoryItemLarge.js';
-import Header from '../ui/Header.js';
 import Tagging from '../ui/Tagging.js';
 
 // App component - represents the whole app
@@ -20,7 +19,6 @@ class ShowInventoryItem extends Component {
     } else {
       return (
         <div className="container">
-          <Header />
           <InventoryItemLarge
             key={iv._id}
             InventoryItem={iv}

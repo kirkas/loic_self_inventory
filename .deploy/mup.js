@@ -29,27 +29,30 @@ module.exports = {
       // TODO: Change to your app's url
       // If you are using ssl, it needs to start with https://
       ROOT_URL: 'http://selfinventory.me',
-      // MONGO_URL: 'mongodb://mongodb/meteor',
+      MONGO_URL: 'mongodb://167.71.47.100:27017/meteor',
+      // MONGO_OPLOG_URL: 'mongodb://root:3oPiZxLYKCcMmiaC@167.71.47.100:27017/local',
       // MONGO_OPLOG_URL: 'mongodb://mongodb/local',
+
       PORT: 3000
     },
 
     docker: {
       // change to 'abernix/meteord:base' if your app is using Meteor 1.4 - 1.5
       image: 'abernix/meteord:node-12.14.0-base',
+      // bind: '127.0.0.1',
     },
 
     // Show progress bar while uploading bundle to server
     // You might need to disable it on CI servers
     enableUploadProgressBar: true
   },
-
-  mongo: {
-    version: '3.4.1',
-    servers: {
-      one: {}
-    }
-  },
+  //
+  // mongo: {
+  //   version: '3.4.1',
+  //   servers: {
+  //     one: {}
+  //   }
+  // },
 
   // (Optional)
   // Use the proxy to setup ssl or to route requests to the correct

@@ -13,7 +13,7 @@ import AdminShowInventory from './pages/AdminShowInventory.js';
 import Index from './pages/Index.js';
 import ShowNoMatch from './pages/ShowNoMatch.js';
 import ShowInventoryItem from './pages/ShowInventoryItem.js';
-
+import Header from './ui/Header.js';
 const browserHistory = history.createBrowserHistory();
 
 
@@ -21,7 +21,9 @@ const browserHistory = history.createBrowserHistory();
 class App extends Component {
   render() {
     return (
+
       <Router history={browserHistory}>
+        <Header />
         <Route exact path="/">
           <Index />
         </Route>
