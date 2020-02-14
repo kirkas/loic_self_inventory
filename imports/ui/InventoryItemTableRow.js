@@ -5,7 +5,6 @@ import Tagging from './Tagging.js';
 import Form from './Form.js';
 import { Taggings } from '../api/taggings.js';
 import { InventoryItems } from '../api/inventory_items.js';
-import { Images } from '../api/images.js';
 import { Router, Route, Link, useParams } from 'react-router';
 // import { Tags } from '../api/tags.js';
 
@@ -30,9 +29,6 @@ export default class InventoryItemTableRow extends Component {
   deleteInventoryItem(event) {
     event.preventDefault();
 
-    if(this.props.InventoryItem.image()) {
-      Images.remove({_id: this.props.InventoryItem.image()._id});
-    }
     // Taggings.remove({InventoryItemId: this.props.InventoryItem._id});
     InventoryItems.remove(this.props.InventoryItem._id);
   }
@@ -44,7 +40,7 @@ export default class InventoryItemTableRow extends Component {
     return (
       <tr className="InventoryItemTableRow">
         <td>
-          {this.props.InventoryItem.image() ? <img className="InventoryItemTableRow--image" src={this.props.InventoryItem.image().link()}/> : ''}
+          {this.props.InventoryItem.image_url ? <img className="InventoryItemTableRow--image" src={this.props.InventoryItem.image_url}/> : ''}
         </td>
         <td>{this.props.InventoryItem.title}</td>
         <td>{this.props.InventoryItem.description}</td>

@@ -21,7 +21,6 @@ const browserHistory = history.createBrowserHistory();
 class App extends Component {
   render() {
     return (
-
       <Router history={browserHistory}>
         <Header />
         <Route exact path="/">

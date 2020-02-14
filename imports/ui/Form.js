@@ -9,7 +9,6 @@ require('selectize');
 import { InventoryItems } from '../api/inventory_items.js';
 import { Taggings } from '../api/taggings.js';
 import { Tags } from '../api/tags.js';
-import { Images } from '../api/images.js';
 
 import TagOption from './TagOption.js';
 
@@ -28,10 +27,11 @@ export default class Form extends Component {
     const category = ReactDOM.findDOMNode(this.refs.category).value.trim();
     const size = ReactDOM.findDOMNode(this.refs.size).value.trim();
     const author = ReactDOM.findDOMNode(this.refs.author).value.trim();
+    const imageUrl = ReactDOM.findDOMNode(this.refs.image_url).value.trim();
 
     const favorite  = ReactDOM.findDOMNode(this.refs.favorite).checked;
     const tags_titles = this.selectize.getValue();
-    const image = ReactDOM.findDOMNode(this.refs.image).files[0]
+
 
 
     // 1. Create new tags
@@ -40,16 +40,6 @@ export default class Form extends Component {
       var tag_title = tags_titles[i].trim()
       var tag = Tags.findOrCreateTagByTitle(tag_title)
       tags.push(tag);
-    }
-
-    // 2. Upload image
-    let imageInsert;
-    if(image) {
-      imageInsert = Images.insert({
-        file: image,
-        streams: 'dynamic',
-        chunkSize: 'dynamic'
-      });
     }
 
     // 3. Save or update the InventoryItem
@@ -64,11 +54,10 @@ export default class Form extends Component {
       year: year,
       category: category,
       author: author,
-      size: size
+      size: size,
+      image_url: imageUrl
     }
-    if(imageInsert) {
-      payload.imageId = imageInsert.config.fileId
-    }
+
 
     if(this.props.InventoryItem) {
       inventory_item_id = this.props.InventoryItem._id
@@ -90,7 +79,7 @@ export default class Form extends Component {
 
     // 5. Create (new) taggings
     for (var i = 0; i < tags.length; i++) {
-      let tasdjcascidj = Taggings.findOrCreateTagging(inventory_item_id, tags[i]._id)
+      let tagging = Taggings.findOrCreateTagging(inventory_item_id, tags[i]._id)
     }
 
     // Clear form
@@ -104,7 +93,7 @@ export default class Form extends Component {
       ReactDOM.findDOMNode(this.refs.category).value = '';
       ReactDOM.findDOMNode(this.refs.size).value = '';
       ReactDOM.findDOMNode(this.refs.favorite).checked = false;
-      ReactDOM.findDOMNode(this.refs.image).value = '';
+      ReactDOM.findDOMNode(this.refs.image_url).value = '';
       this.selectize.clear()
     }
   }
@@ -162,7 +151,7 @@ export default class Form extends Component {
          tagging.tag().title
        ))
     }
-    let image = this.props.InventoryItem ? <img className="Form--image" src={this.props.InventoryItem.image().link()}/> : ''
+    let image = this.props.InventoryItem ? <img className="Form--image" src={this.props.InventoryItem.image_url}/> : ''
 
     return (
       <form className="Form" onSubmit={this.handleSubmit.bind(this)} >
@@ -267,13 +256,14 @@ export default class Form extends Component {
           </select>
         </div>
         <div className="c-input-group">
-          <label className="c-label">Image</label>
+          <label className="c-label">Image URL</label>
           {image}
-          <input className="c-input"
-            type="file"
-            ref="image"
-            require="true"
-            placeholder="Image"/>
+          <input
+            className="c-input"
+            type="text"
+            ref="image_url"
+            placeholder="Size"
+            defaultValue={imageUrlValue}/>
         </div>
         <button type="submit" className="c-button">{this.props.InventoryItem ? 'update' : 'Add'}</button>
       </form>

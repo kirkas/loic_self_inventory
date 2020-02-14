@@ -1,6 +1,5 @@
 import { Mongo } from 'meteor/mongo';
 import { Taggings } from './taggings.js';
-import { Images } from './images.js';
 
 export const InventoryItems = new Mongo.Collection('InventoryItems');
 
@@ -17,7 +16,7 @@ InventoryItems.schema = new SimpleSchema({
   category: {type: String},
   size: {type: String},
   favorite: { type: Boolean, defaultValue: false },
-  imageId: {type: String, regEx: SimpleSchema.RegEx.Id}
+  image_url: {type: String}
 });
 
 // Slug system
@@ -33,9 +32,5 @@ InventoryItems.helpers({
   taggings() {
     taggings = Taggings.find({inventoryItemId: this._id}).fetch();
     return taggings;
-  },
-
-  image() {
-    return Images.findOne({_id: this.imageId});
   }
 });

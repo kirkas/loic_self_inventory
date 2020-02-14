@@ -6,7 +6,6 @@ import { withTracker } from 'meteor/react-meteor-data';
 
 // Data
 import { InventoryItems } from '../api/inventory_items.js';
-import { Images } from '../api/images.js';
 
 // UI
 import InventoryItemCard from '../ui/InventoryItemCard.js';

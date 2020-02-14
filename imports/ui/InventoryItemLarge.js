@@ -4,7 +4,6 @@ import { withTracker } from 'meteor/react-meteor-data';
 // import Tagging from './Tagging.js';
 import { Taggings } from '../api/taggings.js';
 import { InventoryItems } from '../api/inventory_items.js';
-// import { Images } from '../api/images.js';
 import Tagging from './Tagging.js';
 
 // InventoryItem component - represents a single todo item
@@ -53,7 +52,7 @@ export default class InventoryItemLarge extends Component {
 
     return (
       <div className="InventoryItemLarge">
-        {this.props.InventoryItem.image() ? <img className="InventoryItemLarge--image" src={this.props.InventoryItem.image().link()}/> : ''}
+        {this.props.InventoryItem.image_url ? <img className="InventoryItemLarge--image" src={this.props.InventoryItem.image_url}/> : ''}
         <div className="InventoryItemLarge--content">
           <div className="InventoryItemLarge--titleWrapper">
             <h3 className="InventoryItemLarge--title">{this.props.InventoryItem.title}</h3>
