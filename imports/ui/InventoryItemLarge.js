@@ -22,7 +22,7 @@ export default class InventoryItemLarge extends Component {
   renderEditor(inventoryItem) {
     if(this.props.InventoryItem.editor != undefined && this.props.InventoryItem.editor_url != undefined) {
       return (
-        <span className="InventoryItem--editor"><a href={this.props.InventoryItem.editor_url}>{this.props.InventoryItem.editor}</a></span>
+        <span className="InventoryItem--editor"><a href={this.props.InventoryItem.editor_url} target="_blank">{this.props.InventoryItem.editor}</a></span>
       )
     } else if (this.props.InventoryItem.editor != undefined) {
       return(
@@ -46,7 +46,7 @@ export default class InventoryItemLarge extends Component {
     ];
 
     let metadataText = metadata.filter(function (el) {
-      return el != null;
+      return el != null && $.trim(el) != ""
     }).join(", ");
 
 
@@ -64,10 +64,12 @@ export default class InventoryItemLarge extends Component {
           </div>
           <div className="InventoryItemLarge--textWrapper">
             <p className="InventoryItemLarge--description">{this.props.InventoryItem.description}</p>
-            <div className="InventoryItemLarge--tagsWrapper">
-              Keywords:
-              {this.renderTags(this.props.InventoryItem)}
-            </div>
+            {this.props.InventoryItem.taggings().length ?
+              <div className="InventoryItemLarge--tagsWrapper">
+                <span className="InventoryItemLarge--keyword">Keywords</span>
+                {this.renderTags(this.props.InventoryItem)}
+              </div>
+              : '' }
           </div>
         </div>
       </div>

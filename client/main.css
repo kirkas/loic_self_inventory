@@ -227,8 +227,8 @@ html {
 }
 
 .InventoryItemLarge--metadata {
-  font-size: 32px;
-  line-height: 38px;
+  font-size: 30px;
+  line-height: 30px;
   font-weight: 400;
 }
 
@@ -238,6 +238,7 @@ html {
 
 .InventoryItemLarge--titleWrapper {
   flex: 1;
+  padding-right: 50px;
 }
 
 .InventoryItemLarge--textWrapper {
@@ -246,11 +247,22 @@ html {
 
 .InventoryItemLarge--description {
   font-family: 'William Text Pro';
+  font-size: 15px;
+}
+
+.InventoryItemLarge--keyword {
+  text-transform: uppercase;
+  margin-right: 10px;
 }
 
 .InventoryItemLarge--tagsWrapper {
   margin-top: 32px;
 }
+.InventoryItemLarge--tagsWrapper .c-tag {
+  margin-right: 10px;
+  display: inline-block;
+}
+
 
 
 .InventoryItemLarge--image {
@@ -269,7 +281,7 @@ html {
   text-align: center;
   margin-top: 20px;
   font-size: 20px;
-  line-height: 26px;
+  line-height: 20px;
   color: black;
 }
 

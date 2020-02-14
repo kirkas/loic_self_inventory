@@ -26,6 +26,5 @@ accounts-password
 accounts-ui
 jquery
 blaze
-ostrio:files
 todda00:friendly-slugs
 clinical:csv
