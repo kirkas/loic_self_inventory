@@ -49,11 +49,13 @@ class Index extends Component {
         duration: 300,
         delay: (el, i) => 200 * (i+1)
       }).add({
-        targets: '.js-text .js-word',
+        targets: '.js-text',
         opacity: [1, 0],
         easing: "easeInOutQuad",
         duration: 300,
-        delay: 1000
+        delay: 1000,
+        complete: () =>
+          $('.js-text').remove()
       }).add({
         targets: '.js-items',
         opacity: [0, 1],
