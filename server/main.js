@@ -13,6 +13,6 @@ const fs = require('fs');
 
 if (Meteor.isServer) {
   Meteor.startup(() => {
-    // Seed.populate()
+    Seed.populate()
   });
 }

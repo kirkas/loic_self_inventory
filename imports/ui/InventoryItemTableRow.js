@@ -27,8 +27,12 @@ export default class InventoryItemTableRow extends Component {
     return "admin/"+this.props.InventoryItem.slug
   }
 
-  deleteInventoryItem() {
-    Images.remove(this.props.InventoryItem.imageId);
+  deleteInventoryItem(event) {
+    event.preventDefault();
+
+    if(this.props.InventoryItem.image()) {
+      Images.remove({_id: this.props.InventoryItem.image()._id});
+    }
     // Taggings.remove({InventoryItemId: this.props.InventoryItem._id});
     InventoryItems.remove(this.props.InventoryItem._id);
   }
