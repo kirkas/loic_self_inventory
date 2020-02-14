@@ -139,6 +139,7 @@ export default class Form extends Component {
     let descriptionValue = this.props.InventoryItem ? this.props.InventoryItem.description : ''
     let editorValue = this.props.InventoryItem ? this.props.InventoryItem.editor : ''
     let editorUrlValue = this.props.InventoryItem ? this.props.InventoryItem.editor_url : ''
+    let imageUrlValue = this.props.InventoryItem ? this.props.InventoryItem.image_url : ''
     let favoriteChecked = this.props.InventoryItem ? this.props.InventoryItem.favorite : false
 
     let yearValue = this.props.InventoryItem ? this.props.InventoryItem.year : ''
