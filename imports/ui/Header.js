@@ -13,7 +13,7 @@ export default class Header extends Component {
     return (
       <header className="Header">
         <h1 className="Header--title">
-          <a className="Header--title--link" href="/">SelfInventory</a>
+          <a className="Header--title--link" href="/#skipIntro">SelfInventory</a>
         </h1>
         <a href="#" className="Header--title--refresh" onClick={this.refreshPage}><img src="refresh.svg" alt="Refresh" /></a>
         <h2 className="Header--subtitle">of Loïc Dupasquier</h2>
