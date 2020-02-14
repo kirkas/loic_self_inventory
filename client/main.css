@@ -57,7 +57,7 @@ html, body {
 }
 
 body {
-  margin: 32px;
+  margin: 0;
   font-family: 'Neue Haas Unica';
   background: #CDCDCD;
   line-height: 1.6;
@@ -119,15 +119,17 @@ html {
 }
 
 .container {
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0 auto;
 }
 
 .Header {
   display: flex;
   align-items: center;
-  margin-top: 38px;
-  margin-bottom: 32px
+  margin-top: 25px;
+  margin-bottom: 50px;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
 .Header--title {
@@ -147,7 +149,7 @@ html {
 }
 
 .Header--subtitle {
-  font-size: 22px;
+  font-size: 40px;
 }
 
 /* Index */
@@ -179,16 +181,21 @@ html {
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 50px;
 }
 
 .inventoryItemsContainer .InventoryItemCard {
   flex-grow: 1;
   width: 33%;
-  padding: 32px;
+  padding: 0 50px;
+  margin-bottom: 50px;
+}
+
+.InventoryItemLarge {
+  padding: 100px;
 }
 
 .InventoryItemLarge--content {
@@ -204,11 +211,7 @@ html {
   font-weight: 400;
 }
 
-
-
 .InventoryItemLarge--metadata {
-  text-indent: -40px;
-  padding-left: 40px;
   font-size: 32px;
   line-height: 38px;
   font-weight: 400;
@@ -243,8 +246,16 @@ html {
   max-width: 100%
 }
 
+.InventoryItemCard {
+  text-decoration: none;
+}
+
 .InventoryItemCard--title {
   text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
+  line-height: 26px;
+  color: black;
 }
 
 
@@ -275,10 +286,30 @@ hr {
   border-bottom: 1px solid #eee;
 }
 
-
 .success-message {
   background: green;
   padding: 12px;
   color: white;
   margin-bottom: 12px;
+}
+
+@media only screen and (max-width: 800px) {
+  .inventoryItemsContainer {
+    flex-direction: column;
+  }
+
+  .inventoryItemsContainer .InventoryItemCard {
+    width: 100%;
+    padding: 0;
+  }
+
+  .Header {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  .Header--title--refresh {
+    display: none;
+  }
 }

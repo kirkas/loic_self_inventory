@@ -39,8 +39,6 @@ export default class InventoryItemLarge extends Component {
 
 
   render() {
-    console.log(this.renderEditor())
-    window.lol = this.renderEditor()
     let metadata = [
       this.props.InventoryItem.author,
       this.props.InventoryItem.category,
@@ -52,10 +50,10 @@ export default class InventoryItemLarge extends Component {
       return el != null;
     }).join(", ");
 
-    console.log(metadataText)
+
     return (
       <div className="InventoryItemLarge">
-        <img className="InventoryItemLarge--image" src={this.props.InventoryItem.image().link()}/>
+        {this.props.InventoryItem.image() ? <img className="InventoryItemLarge--image" src={this.props.InventoryItem.image().link()}/> : ''}
         <div className="InventoryItemLarge--content">
           <div className="InventoryItemLarge--titleWrapper">
             <h3 className="InventoryItemLarge--title">{this.props.InventoryItem.title}</h3>
@@ -68,7 +66,7 @@ export default class InventoryItemLarge extends Component {
           <div className="InventoryItemLarge--textWrapper">
             <p className="InventoryItemLarge--description">{this.props.InventoryItem.description}</p>
             <div className="InventoryItemLarge--tagsWrapper">
-              Keywords: 
+              Keywords:
               {this.renderTags(this.props.InventoryItem)}
             </div>
           </div>

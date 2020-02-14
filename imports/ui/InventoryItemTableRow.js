@@ -39,7 +39,9 @@ export default class InventoryItemTableRow extends Component {
 
     return (
       <tr className="InventoryItemTableRow">
-        <td><img className="InventoryItemTableRow--image" src={this.props.InventoryItem.image().link()}/></td>
+        <td>
+          {this.props.InventoryItem.image() ? <img className="InventoryItemTableRow--image" src={this.props.InventoryItem.image().link()}/> : ''}
+        </td>
         <td>{this.props.InventoryItem.title}</td>
         <td>{this.props.InventoryItem.description}</td>
         <td>{this.renderTags()}</td>

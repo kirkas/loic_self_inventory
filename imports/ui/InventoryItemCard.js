@@ -12,9 +12,12 @@ export default class InventoryItemCard extends Component {
   render() {
     return (
       <a className="InventoryItemCard" href={this.props.InventoryItem.slug}>
-        <img className="InventoryItemCard--image" src={this.props.InventoryItem.image().link()}/>
+        {this.props.InventoryItem.image() ? <img className="InventoryItemCard--image" src={this.props.InventoryItem.image().link()}/> : ''}
         <br/>
-        <h3 className="InventoryItemCard--title">{this.props.InventoryItem.title}</h3>
+        <h3 className="InventoryItemCard--title">
+          {this.props.InventoryItem.author ? <p>{this.props.InventoryItem.author}</p> : ''}
+          {this.props.InventoryItem.title ? <p>{this.props.InventoryItem.title}</p> : ''}
+        </h3>
       </a>
     );
   }

@@ -1,18 +1,35 @@
 import { Meteor } from 'meteor/meteor'
 import React, { Component } from 'react';
 
+
 import { withTracker } from 'meteor/react-meteor-data';
 
 // Data
 import { InventoryItems } from '../api/inventory_items.js';
+import { Images } from '../api/images.js';
 
 // UI
 import InventoryItemCard from '../ui/InventoryItemCard.js';
 
+function shuffleArray(array) {
+  let i = array.length - 1;
+  for (; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array;
+}
+
 // App component - represents the whole app
 class Index extends Component {
+
   renderInventoryItems() {
-    return this.props.InventoryItems.map((inventory_item) => (
+
+    const shuffledPosts = shuffleArray(this.props.InventoryItems)
+    return shuffledPosts.map((inventory_item) => (
+
       <InventoryItemCard
         key={inventory_item._id}
         InventoryItem={inventory_item}
@@ -48,6 +65,7 @@ class Index extends Component {
 
   componentDidMount() {
     this.animateText()
+
   }
 
   render() {
