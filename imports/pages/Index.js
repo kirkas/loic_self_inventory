@@ -114,7 +114,7 @@ class Index extends Component {
             SelfInventory
           </p>
           <p className="Index--phrase js-phrase js-phrase-1" data-class=".js-phrase-1">
-            <span className="js-word">Tout</span><span className="js-word"> part</span><span className="js-word"> de</span><span className="js-word"> l’accident</span><span className="js-word"> dont</span><span className="js-word"> je</span><span className="js-word"> fus</span><span className="js-word"> victime</span><span className="js-word"> le</span><span className="js-word"> 2</span><span className="js-word"> juin</span><span className="js-word"> 2017.</span><span className="js-word"> L’accident</span><span className="js-word"> qui</span><span className="js-word"> m'a</span><span className="js-word"> vidé</span><span className="js-word"> d’une</span><span className="js-word"> partie</span><span className="js-word"> de</span><span className="js-word"> ma </span>
+            <span className="js-word">Tout</span><span className="js-word"> part</span><span className="js-word"> de</span><span className="js-word"> l’accident</span><span className="js-word"> dont</span><span className="js-word"> je</span><span className="js-word"> fus</span><span className="js-word"> victime</span><span className="js-word"> le</span><span className="js-word"> 2</span><span className="js-word"> juin</span><span className="js-word"> 2017.</span><br/><br/><span className="js-word"> L’accident</span><span className="js-word"> qui</span><span className="js-word"> m'a</span><span className="js-word"> vidé</span><span className="js-word"> d’une</span><span className="js-word"> partie</span><span className="js-word"> de</span><span className="js-word"> ma </span>
             <span className="Index--wordUnderlined js-word">culture personnelle</span>
             <span className="js-word"> </span><span className="js-word"> et</span><span className="js-word"> de</span><span className="js-word"> mes </span>
             <span className="js-word Index--wordUnderlined">souvenirs</span><span className="js-word">.</span>
@@ -128,7 +128,7 @@ class Index extends Component {
           <p className="Index--phrase js-phrase js-phrase-4" data-class=".js-phrase-4">
             <span className="js-word">Le mémoire</span>
             <br/><br/>
-            <span className="js-word">Le mémoire</span>
+            <span className="js-word">La mémoire</span>
           </p>
           <p className="Index--phrase js-phrase js-phrase-5" data-class=".js-phrase-5">
             <span className="js-word">Ce </span><span className="js-word">sont </span><span className="js-word">les </span><span className="js-word">termes </span><span className="js-word">qui </span><span className="js-word">définissent </span><span className="js-word">ce </span><span className="js-word">projet.</span>
