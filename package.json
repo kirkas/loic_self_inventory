@@ -10,7 +10,7 @@
   "dependencies": {
     "@babel/runtime": "^7.7.6",
     "history": "^4.10.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "meteor-node-stubs": "^1.0.0",
     "papaparse": "^5.1.1",
     "react": "^16.9.0",
