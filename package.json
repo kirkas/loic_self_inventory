@@ -20,7 +20,7 @@
     "request": "^2.88.2",
     "selectize": "^0.12.6",
     "selectize.js": "^0.12.12",
-    "simpl-schema": "^1.5.6",
+    "simpl-schema": "^1.10.2",
     "xmlhttprequest": "^1.8.0"
   },
   "meteor": {
